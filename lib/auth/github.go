@@ -248,7 +248,7 @@ func orgUsesExternalSSO(ctx context.Context, endpointURL, org string, client htt
 		}
 		// Handle makeHTTPGetReq errors.
 		if err == nil {
-			break
+			return false, nil
 		} else if errors.As(err, &urlErr) && urlErr.Timeout() {
 			if i == retries-1 {
 				// The connection timed out a couple of times in a row,
