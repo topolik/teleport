@@ -107,6 +107,7 @@ RUN apt-get -y update && \
     add-apt-repository -y ppa:git-core/ppa && \
     apt-get update -y --fix-missing && \
     apt-get -q -y upgrade && \
+    apt-get remove -y python3.6 && apt-get install -y python3.8 &&\
     apt-get install -q -y --no-install-recommends \
         apt-utils \
         build-essential \
